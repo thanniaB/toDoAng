@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app = "todo">
+	<head>
+		<meta charset="UTF-8">
+		<title> to do list </title>
+		<link rel="stylesheet" type="text/css" href="todo-styles.css">
+	</head>
+	<body>
+		<div class="everything" ng-controller = "TodoController as todo">
+			<header>
+			TO DOs
+			</header>
+			<main>
+				<input type = "text" class="insertTask" id = "insertTask" placeholder="Add task..."/>
+				<div class="task" ng-repeat = 'task in todo.tasks' >
+					<input type="checkbox" class= "checkbox" /> {{" " + task}} <input type="submit" class="eraseButton" value="X" />
+				</div>
+				<div class="info" ng-show = "todo.tasks">
+				{{ todo.tasks.length + " items left"}}
+				</div>
+			</main>
+			<footer>
+			Thannia Blanchet's exercise	at Nearsoft <br/>
+			Using Angular <br/>
+			July 2014
+			</footer>
+		</div>
+		<script src="angular.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

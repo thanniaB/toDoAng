@@ -1,0 +1,76 @@
+*{
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0px;
+	font-size: 24px;
+	background-image: url("images/crossword.png");
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+
+.everything{
+	width: 70%;
+	margin: 10px auto;
+}
+
+header{
+	font-size: 3.375em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.insertTask{
+	width: 100%;
+	padding: 15px;
+	font-size: 1em;
+	color: #073;
+	background-color: #ccc;
+}
+
+.task{
+	width: 100%;
+	padding: 15px;
+	color: white;
+	background-image: url("images/pool_table.png");
+}
+.taskText{
+	color: white;
+	font-size: 1em;
+	background: none;
+	border: none;
+}
+
+.eraseButton{
+	width: 25px;
+	height: 25px;
+	float: right;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	padding: 1px;
+}
+.eraseButton:active{
+	color: red;
+	border: none;
+}
+
+.info{
+	width: 100%;
+	/*visibility: hidden;*/
+	font-size: 0.667em;
+	color: #ddd;
+	background-color: black;
+	padding: 3px 25px;
+}
+
+footer{
+	padding: 10px;
+	font-size: 0.549em;
+	text-align: center;
+}
