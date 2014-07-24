@@ -11,9 +11,9 @@
 			TO DOs
 			</header>
 			<main>
-				<input type = "text" class="insertTask" id = "insertTask" placeholder="Add task..."/>
-				<div class="task" ng-repeat = 'task in todo.tasks' >
-					<input type="checkbox" class= "checkbox" /> {{" " + task}} <input type="submit" class="eraseButton" value="X" />
+				<input type = "text" class="insertTask" id = "insertTask" placeholder="Add task..." ng-click = "todo.addTask()"/>
+				<div class="task" ng-repeat = 'task in todo.tasks' ng-dblclick="todo.editTask()">
+					<input type="checkbox" class= "checkbox" ng-click = "todo.clickBox()"/> {{" " + task}} <input type="submit" class="eraseButton" value="X" ng-click = "todo.deleteBox()" />
 				</div>
 				<div class="info" ng-show = "todo.tasks">
 				{{ todo.tasks.length + " items left"}}
