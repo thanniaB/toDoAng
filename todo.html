@@ -11,12 +11,12 @@
 			TO DOs
 			</header>
 			<main>
-				<input type = "text" class="insertTask" id = "insertTask" placeholder="Add task..." ng-click = "todo.addTask()"/>
-				<div class="task" ng-repeat = 'task in todo.tasks' ng-dblclick="todo.editTask()">
-					<input type="checkbox" class= "checkbox" ng-click = "todo.clickBox()"/> {{" " + task}} <input type="submit" class="eraseButton" value="X" ng-click = "todo.deleteBox()" />
+				<input type = "text" class="genericBox insertTask" id = "insertTask" placeholder="Add task..." ng-enter = "todo.addTask()" ng-model = "toDoText"/>
+				<div class="genericBox task" ng-repeat = 'task in todo.tasks' >
+					<input type="checkbox" class= "checkbox" ng-model="task.done" ng-click = "todo.check()"/><input type="text" class = "taskText done-{{task.done}}" value="{{task.name}}"/><input type="submit" class="eraseButton" value="X" ng-click = "todo.deleteBox(task.name)" />
 				</div>
 				<div class="info" ng-show = "todo.tasks">
-				{{ todo.tasks.length + " items left"}}
+				{{ todo.items + " items left"}}
 				</div>
 			</main>
 			<footer>
@@ -24,6 +24,11 @@
 			Using Angular <br/>
 			July 2014
 			</footer>
+
+		<!-- PROBLEMS:
+		info div doesnt reload on change, so it never reappears or refreshes content
+		the check() function is executed before the checkbox attribute is changed to false, which makes it not work accurately -->
+		
 		</div>
 		<script src="angular.min.js"></script>
 		<script src="app.js"></script>

@@ -24,16 +24,17 @@ header{
 }
 
 .insertTask{
-	width: 100%;
-	padding: 15px;
 	font-size: 1em;
 	color: #073;
 	background-color: #ccc;
 }
 
-.task{
+.genericBox{
 	width: 100%;
 	padding: 15px;
+}
+
+.task{
 	color: white;
 	background-image: url("images/pool_table.png");
 }
@@ -42,6 +43,10 @@ header{
 	font-size: 1em;
 	background: none;
 	border: none;
+}
+
+.done-true{
+	text-decoration: line-through;
 }
 
 .eraseButton{
