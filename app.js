@@ -1,12 +1,16 @@
 (function(){
 
 	var app = angular.module("todo", []);
-	var tasks = [];
+	var tasks = [{name: "dog", done: false}];
 	var index, itemsDone = 0, itemsLeft = tasks.length;
 
 	app.controller("TodoController", function ($scope){
 			this.tasks = tasks;
 			this.items = itemsLeft;
+
+			$scope.getTos = function(){
+				return itemsLeft;
+			}
 
 			this.check = function(){
 				//function is executed before done status changes, which leads to innacuracies
@@ -21,10 +25,14 @@
 				items = itemsLeft;
 				console.log(items);
 			}	
+			this.getTodos = function(){
+				return itemsLeft;
+			}
 
 
 			this.addTask = function(){
 					tasks.push({name: $scope.toDoText, done: false});
+					$scope.toDoText = '';
 			}
 
 			this.deleteBox = function(taskName){
